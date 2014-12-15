@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>{% block title %}My Site{% endblock %}</title>
+  <title>Rafael Minguet García - {% block title %}{% endblock %}</title>
   <link rel="stylesheet" type="text/css" href="/stylesheets/pure/pure-min.css">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   {% block head %}

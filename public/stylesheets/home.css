@@ -1,0 +1,188 @@
+body {
+  font: 14px sans-serif;
+}
+
+#layout, #menu-lateral, .menu-link {
+  transition: all 0.2s ease-out 0s;
+}
+
+.rminguet-menu-sup {
+  border-bottom: 1px solid gray !important;
+  position: fixed;
+}
+
+.banner {
+  background: url('../images/mosaic_opac_p.jpg') no-repeat scroll 0 0 / cover transparent;
+  display: table;
+  height: 400px;
+  margin-bottom: 3em;
+  text-align: center;
+  width: 100%;
+}
+
+.banner-head {
+  color: white;
+  display: table-cell;
+  font-size: 2em;
+  font-weight: 500;
+  margin-bottom: 0;
+  text-shadow: 1px 2px 1px black;
+  vertical-align: middle;
+}
+
+.subtitle {
+  font-size: 0.5em;
+}
+
+#layout {
+  margin-left: 0px;
+  border-left: 1px solid #CCC;
+}
+
+#menu-lateral-izq {
+  position: absolute;
+  width: 200px;
+  left: 0;
+  margin-left:-200px;
+}
+
+#menu-lateral-izq-link{
+  width: 2em;
+  height: 2em;
+  position: absolute;
+  border: 1px solid red;
+}
+
+.rminguet-menu-lat-izq {
+  border: 0 !important;
+}
+
+.content {
+  margin: auto;
+  max-width: 800px;
+}
+
+/* ------- ARTÍCULO ------- */
+.content article {
+  border-bottom: 1px dotted #ccc;
+  margin-bottom: 25px;
+  margin-left: 110px;
+  margin-right: 5%;
+  padding-bottom: 25px;
+}
+
+.article-info-lat {
+  position: absolute;
+  margin-left: -135px;
+}
+
+.article-info-lat ul {
+  margin: 0px;
+  list-style: outside none none;
+}
+
+.article-head {
+  height: 70px;
+  display: table-cell;
+  vertical-align: middle;
+  font-weight: lighter;
+}
+
+.article-head h2 {
+  font-weight: lighter;
+  font-size: 2em;
+  margin: 0;
+}
+
+.article-content {
+  padding-top: 40px;
+}
+
+.article-content, .article-tags {
+  line-height: 1.8em;
+  margin-left: -100px;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+  /* -- FECHA ARTÍCULO ------- */
+  .date-globo {
+    background-color: #777;
+    border-radius:100%;
+    width: 70px;
+    height: 70px;
+  }
+
+  .date-content {
+    text-align:center;
+    line-height: 1.5em;
+    padding-top: 0.2em;
+    color: white;
+    text-shadow: 1px 1px 1px black;
+  }
+
+  .date-month, .date-year {
+    font-size: 0.9em;
+  }
+
+  .date-day {
+    font-size: 2.6em;
+  }
+
+  /* ------------------------- */
+/* --------------------------- */
+
+@media(min-width:767px) {
+
+  .rminguet-menu-sup {
+    border-bottom: 0;
+    position: inherit;
+  }
+
+  .banner {
+    background-image: url('../images/mosaic_opac.jpg');
+  }
+
+  .banner-head {
+    font-size: 3em;
+  }
+
+  #menu-lateral-izq {
+    left:200px;
+  }
+
+  #layout {
+    margin-left: 200px;
+  }
+
+  .content article {
+    margin-left: 150px;
+  }
+
+  .article-info-lat {
+    margin-left: -170px;
+  }
+
+  .article-info-lat ul {
+    margin: 0px;
+  }
+
+  .article-head h2 {
+    font-size: 2.5em;
+  }
+
+  .article-content {
+    margin-left: 0px;
+  }
+
+  .article-content {
+    padding-top: 25px;
+  }
+
+  .article-content, .article-tags {
+    margin-left: 0px;
+    padding-left: 0px;
+    padding-right: 15px;
+  }
+
+}

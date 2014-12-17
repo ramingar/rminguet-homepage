@@ -1,8 +1,6 @@
-/* jshint indent: 2 */
-
 module.exports = function(sequelize, DataTypes) {
   var Tag = sequelize.define("Tag", {
-    nombre: {
+    name: {
       type: DataTypes.STRING,
       unique: true,
       allowNull: false,

@@ -1,16 +1,14 @@
-/* jshint indent: 2 */
-
 module.exports = function(sequelize, DataTypes) {
   var Post = sequelize.define("Post", {
-    titulo: {
+    tittle: {
       type: DataTypes.STRING,
       allowNull: false
     },
-    texto: {
+    text: {
       type: DataTypes.TEXT,
       allowNull: false
     },
-    fecha: {
+    date: {
       type: DataTypes.DATE,
       allowNull: false
     }
@@ -21,7 +19,7 @@ module.exports = function(sequelize, DataTypes) {
     */
     classMethods: {
       associate: function(models) {
-        Post.belongsTo(models.Usuario, { as: 'usuario' });
+        Post.belongsTo(models.User, { as: 'user' });
         Post.hasMany(models.Tag, { foreignKey: 'tagId' });
       }
     },

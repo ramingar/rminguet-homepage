@@ -9,23 +9,23 @@ module.exports = function(sequelize, DataTypes) {
   var User = sequelize.define("User", {
 
     alias: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING(150),
       unique: true,
       allowNull: false,
     },
 
     pass: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING(150),
       allowNull: false,
     },
 
     salt: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING(150),
       allowNull: false,
     }
 
   }, {
-    
+
     timestamps: false,
 
     setterMethods: {

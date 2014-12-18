@@ -1,7 +1,7 @@
 module.exports = function(sequelize, DataTypes) {
   var Post = sequelize.define("Post", {
     tittle: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING(150),
       allowNull: false
     },
     text: {
@@ -14,7 +14,7 @@ module.exports = function(sequelize, DataTypes) {
     }
   }, {
     /* 
-      en las relaciones el "models.Usuario" corresponde con el nombre en BBDD,
+      en las relaciones el "models.User" corresponde con el nombre en BBDD,
       así que si no coincide, fallará siempre.
     */
     classMethods: {

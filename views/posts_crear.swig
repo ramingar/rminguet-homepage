@@ -4,36 +4,25 @@
 
 {% block head %}
   {% parent %}
-  <link rel="stylesheet" type="text/css" href="#">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/posts_crear.css">
 {% endblock head %}
 
 {% block content %}
 <div id="content">
-  <h1>Listado de posts</h1>
-  <p>
-    <span>Este es tu listado de posts creados. Para crear uno nuevo: </span>
-    <a class="pure-button pure-button-primary" href="posts/crear">Nuevo</a>
-  </p>
-  {% if posts.length > 0 %}
-  <table class="pure-table-striped">
-    <thead>
-      <tr>
-        <th>id</th>
-      </tr>
-    </thead>
-    <tbody>
-      {% for post in posts %}
-        <tr>
-          <td>{{ post.id }}</td>
-          <td>{{ post.title }}</td>
-          <td><button type="button" class="pure-button pure-button-primary">Ver</button></td>
-          <td><button type="button" class="pure-button pure-button-primary">Editar</button></td>
-          <td><button type="button" class="pure-button pure-button-primary">Eliminar</button></td>
-        </tr>
-      {% endfor %}
-    </tbody>
-  </table>
-  {% endif %}
+  <form id="form-post-crear" class="pure-form pure-form-stacked" method="post" action="#">
+    <fieldset>
+      <legend>Creación de nuevo artículo</legend>
+
+      <label for="title">Título</label>
+      <input id="title" name="title" type="text" placeholder="Título" autofocus>
+
+      <label for="text">Artículo</label>
+      <textarea id="text" name="text" placeholder="Texto del artículo"></textarea>
+      <br>
+      <button type="submit" class="pure-button pure-button-primary">Enviar</button>
+      <a class="button-error button-secondary pure-button" href="../posts">Cancelar</a>
+    </fieldset>
+  </form>
   
   {% if err.length > 0 %}
     <br><span id="error">El usuario/contraseña no existe.</span>

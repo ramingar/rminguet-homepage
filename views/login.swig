@@ -14,7 +14,7 @@
       <legend>Introduce tu usuario y contraseña:</legend>
 
       <label for="alias">Usuario</label>
-      <input id="alias" name="alias" type="text" placeholder="Usuario">
+      <input id="alias" name="alias" type="text" placeholder="Usuario" autofocus>
 
       <label for="pass">Password</label>
       <input id="pass" name="pass" type="password" placeholder="Contraseña">

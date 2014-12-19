@@ -1,0 +1,26 @@
+#content {
+  width: 70%;
+  margin-left: 15%;
+  margin-right: 15%;
+}
+
+#content input, #content textarea {
+  width: 100%;
+}
+
+#content textarea {
+  height: 400px;
+}
+
+.button-secondary {
+  color: white;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+.button-error {
+  background: rgb(202, 60, 60);
+}
+
+#error {
+  color: red;
+}

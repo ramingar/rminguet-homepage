@@ -37,7 +37,7 @@ router.get('/:alias/posts', utils.tools.checkAuth, function(req, res) {
   });
 });
 
-router.get('/:alias/posts/crear', function(req, res) {
+router.get('/:alias/posts/crear', utils.tools.checkAuth, function(req, res) {
   res.render('posts_crear');
 });
 

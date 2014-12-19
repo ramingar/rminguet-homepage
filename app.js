@@ -4,7 +4,9 @@ var favicon      = require('serve-favicon');
 var logger       = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser   = require('body-parser');
-var swig         = require('swig');
+var session      = require('express-session')  // npm install express-session
+var swig         = require('swig');            // npm install swig
+var uuid         = require('node-uuid');       // npm install node-uuid
 
 var routes = require('./routes/site');
 var users  = require('./routes/users');
@@ -24,6 +26,7 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(session({ secret: uuid.v4() }));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);

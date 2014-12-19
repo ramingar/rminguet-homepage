@@ -1,0 +1,42 @@
+body {
+  font: 14px sans-serif;
+}
+
+#layout, #menu-lateral, .menu-link {
+  transition: all 0.2s ease-out 0s;
+}
+
+.rminguet-menu-sup {
+  border-bottom: 1px solid gray !important;
+  position: fixed;
+  font-size: 10px;
+}
+
+.banner {
+  background: url('../images/mosaic_opac_p.jpg') no-repeat scroll 0 0 / cover transparent;
+  display: table;
+  height: 200px;
+  margin-bottom: 3em;
+  text-align: center;
+  width: 100%;
+}
+
+.banner-head {
+  color: white;
+  display: table-cell;
+  font-size: 2em;
+  font-weight: 500;
+  margin-bottom: 0;
+  text-shadow: 1px 2px 1px black;
+  vertical-align: middle;
+}
+
+.subtitle {
+  font-size: 0.5em;
+}
+
+@media(min-width:400px) {
+  .rminguet-menu-sup {
+    font-size: 14px;
+  }
+}

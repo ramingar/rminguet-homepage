@@ -8,21 +8,6 @@
 {% endblock head %}
 
 {% block content %}
-
-  <div class="rminguet-menu-sup pure-menu pure-menu-open pure-menu-horizontal">
-    <ul>
-      <li><a href="#">Inicio</a></li>
-      <li><a href="#">Blog</a></li>
-      <li><a href="#">Currículum</a></li>
-      <li><a href="#">Contacta</a></li>
-    </ul>
-  </div>
-  <div class="banner">
-    <h1 class="banner-head">
-      Programador front-end / back-end<br>
-      <span class="subtitle">Maestro. Profesor de español como L2/LE</span>
-    </h1>
-  </div>
   <div id="layout">
     <div id="menu-lateral-izq">
       <div class="rminguet-menu-lat-izq pure-menu pure-menu-open">

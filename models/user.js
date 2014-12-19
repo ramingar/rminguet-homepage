@@ -40,8 +40,8 @@ module.exports = function(sequelize, DataTypes) {
 
     instanceMethods: {
       isValidPassword: function(passString) {
-        return this.getDataValue('pass') === 
-          hash(passString, this.getDataValue('salt'));
+        return passString && (this.getDataValue('pass') === 
+          hash(passString, this.getDataValue('salt')));
       }
     }
   });

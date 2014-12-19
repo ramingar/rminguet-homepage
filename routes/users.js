@@ -1,6 +1,7 @@
-var express = require('express');
-    router  = express.Router();
-    models  = require('../models');
+var express = require('express'),
+    router  = express.Router(),
+    models  = require('../models'),
+    utils   = require('../utils/utils');
 
 router.get('/add', function(req, res) {
   models.User.create({ 
@@ -11,12 +12,25 @@ router.get('/add', function(req, res) {
   });
 });
 
-router.get('/check', function(req, res) {
+router.post('/check', function(req, res) {
   models.User.find({
-    where: { alias: req.param('alias') }
+    where: { alias: req.body.alias }
   }).then(function(user) {
-    res.redirect('/');
+    if (user && user.isValidPassword(req.body.pass)) {
+      req.session.user_id = user.getDataValue('id');
+      res.redirect('/user/' + user.getDataValue('alias') + '/posts');
+    } else {
+      res.redirect('/user/login?err=true');
+    } 
   });
+});
+
+router.get('/:alias/posts', utils.tools.checkAuth, function(req, res) {
+  res.send('BIIIEEEEEENNNNNN!!!!' + req.params.alias);
+});
+
+router.get('/login', function(req, res) {
+  res.render('login', { err: req.param('err') });
 });
 
 module.exports = router;

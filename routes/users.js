@@ -1,7 +1,8 @@
-var express = require('express'),
-    router  = express.Router(),
-    models  = require('../models'),
-    utils   = require('../utils/utils');
+var express   = require('express'),
+    router    = express.Router(),
+    models    = require('../models'),
+    sequelize = require("sequelize"),
+    utils     = require('../utils/utils');
 
 router.get('/add', function(req, res) {
   models.User.create({ 
@@ -26,7 +27,18 @@ router.post('/check', function(req, res) {
 });
 
 router.get('/:alias/posts', utils.tools.checkAuth, function(req, res) {
-  res.send('BIIIEEEEEENNNNNN!!!!' + req.params.alias);
+  models.Post.findAll({
+    include: [ {
+      model: models.User, as: 'user',
+      where: { id: req.session.user_id, alias: req.params.alias }
+    } ]
+  }).then(function(posts) {
+    res.render('posts_lista', { 'posts': posts });
+  });
+});
+
+router.get('/:alias/posts/crear', function(req, res) {
+  res.render('posts_crear');
 });
 
 router.get('/login', function(req, res) {

@@ -38,6 +38,12 @@ module.exports = function(sequelize, DataTypes) {
       }
     },
 
+    classMethods: {
+      associate: function(models) {
+        User.hasMany(models.Post, { foreignKey: 'userId' });
+      }
+    },
+
     instanceMethods: {
       isValidPassword: function(passString) {
         return passString && (this.getDataValue('pass') === 

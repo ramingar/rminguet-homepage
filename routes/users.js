@@ -33,4 +33,11 @@ router.get('/login', function(req, res) {
   res.render('login', { err: req.param('err') });
 });
 
+router.get('/logout', function(req, res) {
+  if (!(typeof req.session.user_id=='undefined')) {
+    delete req.session.user_id;
+  }
+  res.redirect('/user/login');
+});
+
 module.exports = router;

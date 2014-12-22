@@ -22,50 +22,29 @@
 
     <div id="main">
       <div class="content">
+        {% for post in posts %}
         <article>
           <aside class="article-info-lat">
             <ul>
               <li class="article-date">
                 <div class="date-globo">
                   <div class="date-content">
-                    <div class="date-month">dic</div>
-                    <div class="date-day">20</div>
-                    <div class="date-year">2014</div>
+                    <div class="date-month">{{ post.date | date('m') |
+                      month_spanish | truncate(3,'') | capitalize }}</div>
+                    <div class="date-day">{{ post.date | date('d') }}</div>
+                    <div class="date-year">{{ post.date | date('Y') }}</div>
                   </div>
                 </div>
               </li>
             </ul>
           </aside>
-          <header class="article-head"><h2>Este es el título súper chachipí de la muerte</h2></header>
+          <header class="article-head"><h2>{{ post.title }}</h2></header>
           <section class="article-content">
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus interdum blandit urna at porta. Praesent sodales mi turpis, ac congue nisi ornare id. Etiam fermentum id nisi vitae ultrices. Fusce sit amet ultricies mauris, quis facilisis augue. Mauris at mi faucibus, finibus nisl ac, ullamcorper leo. Nullam vestibulum ultrices ipsum sit amet vehicula. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla facilisi. Proin et diam at orci laoreet sollicitudin. Quisque lacinia ante id felis aliquam tempor.
-            </p>
+            <p>{{ post.text | safe | truncate }}</p>
           </section>
-          <div class="article-tags">node.js express html css</div>
+          <div class="article-tags"></div>
         </article>
-        <article>
-          <aside class="article-info-lat">
-            <ul>
-              <li class="article-date">
-                <div class="date-globo">
-                  <div class="date-content">
-                    <div class="date-month">dic</div>
-                    <div class="date-day">20</div>
-                    <div class="date-year">2014</div>
-                  </div>
-                </div>
-              </li>
-            </ul>
-          </aside>
-          <header class="article-head"><h2>Este es el título</h2></header>
-          <section class="article-content">
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus interdum blandit urna at porta. Praesent sodales mi turpis, ac congue nisi ornare id. Etiam fermentum id nisi vitae ultrices. Fusce sit amet ultricies mauris, quis facilisis augue. Mauris at mi faucibus, finibus nisl ac, ullamcorper leo. Nullam vestibulum ultrices ipsum sit amet vehicula. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla facilisi. Proin et diam at orci laoreet sollicitudin. Quisque lacinia ante id felis aliquam tempor.
-            </p>
-          </section>
-          <div class="article-tags">node.js express html css</div>
-        </article>
+        {% endfor %}
       </div>
     </div>
   </div>

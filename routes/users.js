@@ -1,7 +1,7 @@
 var express   = require('express'),
     router    = express.Router(),
     models    = require('../models'),
-    sequelize = require("sequelize"),
+    sequelize = require('sequelize'),
     utils     = require('../utils/utils');
 
 router.get('/add', function(req, res) {

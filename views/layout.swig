@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="es-ES">
 <head>
   <meta charset="utf-8">
   <title>Rafael Minguet García - {% block title %}{% endblock %}</title>

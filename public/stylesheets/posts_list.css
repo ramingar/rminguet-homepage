@@ -1,0 +1,25 @@
+#content {
+  width: 70%;
+  margin-left: 15%;
+  margin-right: 15%;
+}
+
+.button-red {
+  background: rgb(202, 60, 60);
+}
+
+.posts-list {
+  width: 100%;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+#error {
+  color: red;
+}

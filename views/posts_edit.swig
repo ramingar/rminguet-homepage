@@ -1,15 +1,15 @@
 {% extends 'layout.swig' %}
 
-{% block title %}Página de login{% endblock %}
+{% block title %}Edición de post{% endblock %}
 
 {% block head %}
   {% parent %}
-  <link rel="stylesheet" type="text/css" href="/stylesheets/posts_crear.css">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/posts_edit.css">
 {% endblock head %}
 
 {% block content %}
 <div id="content">
-  <form id="form-post-crear" class="pure-form pure-form-stacked" method="post" action="#">
+  <form id="form-post-crear" class="pure-form pure-form-stacked" method="post" action="../posts/create">
     <fieldset>
       <legend>Creación de nuevo artículo</legend>
 
@@ -25,7 +25,7 @@
   </form>
   
   {% if err.length > 0 %}
-    <br><span id="error">El usuario/contraseña no existe.</span>
+    <br><span id="error"></span>
   {% endif %}
 </div>
 {% endblock content %}

@@ -33,12 +33,22 @@ router.get('/:alias/posts', utils.tools.checkAuth, function(req, res) {
       where: { id: req.session.user_id, alias: req.params.alias }
     } ]
   }).then(function(posts) {
-    res.render('posts_lista', { 'posts': posts });
+    res.render('posts_list', { 'posts': posts });
   });
 });
 
-router.get('/:alias/posts/crear', utils.tools.checkAuth, function(req, res) {
-  res.render('posts_crear');
+router.get('/:alias/posts/edit', utils.tools.checkAuth, function(req, res) {
+  res.render('posts_edit');
+});
+
+router.post('/:alias/posts/create', utils.tools.checkAuth, function(req, res) {
+  models.Post.create({
+    title: req.param('title'),
+    text: req.param('text'),
+    userId: req.session.user_id
+  }).then(function() {
+    res.redirect('/user/' + req.params.alias + '/posts');
+  });
 });
 
 router.get('/login', function(req, res) {

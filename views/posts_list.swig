@@ -4,7 +4,7 @@
 
 {% block head %}
   {% parent %}
-  <link rel="stylesheet" type="text/css" href="/stylesheets/posts_lista.css">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/posts_list.css">
 {% endblock head %}
 
 {% block content %}
@@ -12,13 +12,15 @@
   <h1>Listado de posts</h1>
   <p>
     <span>Este es tu listado de posts creados. Para crear uno nuevo: </span>
-    <a class="pure-button pure-button-primary" href="posts/crear">Nuevo</a>
+    <a class="pure-button pure-button-primary" href="posts/edit">Nuevo</a>
   </p>
   {% if posts.length > 0 %}
-  <table class="pure-table-striped">
+  <table class="posts-list pure-table-striped">
     <thead>
       <tr>
-        <th>id</th>
+        <th class="text-left">Id</th>
+        <th class="text-left">Título</th>
+        <th class="text-right">Acciones</th>
       </tr>
     </thead>
     <tbody>
@@ -26,9 +28,11 @@
         <tr>
           <td>{{ post.id }}</td>
           <td>{{ post.title }}</td>
-          <td><button type="button" class="pure-button pure-button-primary">Ver</button></td>
-          <td><button type="button" class="pure-button pure-button-primary">Editar</button></td>
-          <td><button type="button" class="pure-button pure-button-primary">Eliminar</button></td>
+          <td class="text-right">
+            <button type="button" class="pure-button">Ver</button>
+            <button type="button" class="pure-button">Editar</button>
+            <button type="button" class="button-red pure-button">Eliminar</button>
+          </td>
         </tr>
       {% endfor %}
     </tbody>

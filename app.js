@@ -11,7 +11,7 @@ var uuid         = require('node-uuid');       // npm install node-uuid
 var routes = require('./routes/site');
 var users  = require('./routes/users');
 
-var swigCustomFilters = require('./utils/swig-filters');
+var swigCustomFilters = require('./utils/swig-filters');  // to load custom filters
 
 var app = express();
 

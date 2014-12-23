@@ -51,6 +51,14 @@ router.post('/:alias/posts/create', utils.tools.checkAuth, function(req, res) {
   });
 });
 
+router.get('/:alias/posts/delete', utils.tools.checkAuth, function(req, res){
+  models.Post.find(parseInt(req.param('id'))).then(function(post){
+    post.destroy().then(function(){
+      res.redirect('/user/' + req.params.alias + '/posts');
+    });
+  });
+});
+
 router.get('/login', function(req, res) {
   res.render('login', { err: req.param('err') });
 });

@@ -1,7 +1,7 @@
 var swig = require('swig');
 
 /**
-* This function truncate an 'input' string after 'len' characters and adds an
+* This function truncates an 'input' string after 'len' characters and adds an
 * 'end' word at the end.
 *
 * @example

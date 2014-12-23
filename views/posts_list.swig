@@ -29,9 +29,9 @@
           <td>{{ post.id }}</td>
           <td>{{ post.title }}</td>
           <td class="text-right">
-            <button type="button" class="pure-button">Ver</button>
-            <button type="button" class="pure-button">Editar</button>
-            <button type="button" class="button-red pure-button">Eliminar</button>
+            <a type="button" class="pure-button" href="#">Ver</a>
+            <a type="button" class="pure-button" href="#">Editar</a>
+            <a type="button" class="button-red pure-button" href="posts/delete?id={{ post.id }}">Eliminar</a>
           </td>
         </tr>
       {% endfor %}

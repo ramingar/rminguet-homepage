@@ -13,11 +13,13 @@
     <fieldset>
       <legend>Creación de nuevo artículo</legend>
 
+      <input id="id" name="id" type="hidden" value="{{ post.id }}">
+
       <label for="title">Título</label>
-      <input id="title" name="title" type="text" placeholder="Título" autofocus>
+      <input id="title" name="title" type="text" placeholder="Título" value="{{ post.title }}" autofocus>
 
       <label for="text">Artículo</label>
-      <textarea id="text" name="text" placeholder="Texto del artículo"></textarea>
+      <textarea id="text" name="text" placeholder="Texto del artículo">{{ post.text }}</textarea>
       <br>
       <button type="submit" class="pure-button pure-button-primary">Enviar</button>
       <a class="button-error button-secondary pure-button" href="../posts">Cancelar</a>

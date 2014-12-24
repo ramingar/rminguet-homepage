@@ -30,7 +30,7 @@
           <td>{{ post.title }}</td>
           <td class="text-right">
             <a type="button" class="pure-button" href="#">Ver</a>
-            <a type="button" class="pure-button" href="#">Editar</a>
+            <a type="button" class="pure-button" href="posts/edit?id={{ post.id }}">Editar</a>
             <a type="button" class="button-red pure-button" href="posts/delete?id={{ post.id }}">Eliminar</a>
           </td>
         </tr>

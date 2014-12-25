@@ -11,4 +11,12 @@ router.get('/', function(req, res) {
   });
 });
 
+router.get('/index2', function(req, res) {
+  models.Post.findAll({
+    order: 'id DESC'
+  }).then(function(posts) {
+    res.render('index2', { 'posts': posts });
+  });
+});
+
 module.exports = router;

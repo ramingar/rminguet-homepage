@@ -10,6 +10,7 @@ body {
   border-bottom: 1px solid gray !important;
   position: fixed;
   font-size: 10px;
+  text-align: center;
 }
 
 .banner {

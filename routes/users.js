@@ -52,8 +52,8 @@ router.get('/:alias/posts/edit', utils.tools.checkAuth, function(req, res) {
     res.render('posts_edit', { 'post': result[0] });
   };
 
-  // 'async.parallel' makes possible that 'showPage' function only runs 
-  // after all functions array complete their work.
+  // 'async.parallel' makes possible that the 'showPage' function runs only 
+  // after all functions in the array complete their work.
   async.parallel([findPost], showPage);
 });
 

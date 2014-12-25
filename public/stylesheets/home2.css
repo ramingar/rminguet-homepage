@@ -1,0 +1,81 @@
+.banner {
+  height: 400px !important;
+}
+
+#main {
+  width: 95%;
+  margin: auto;
+}
+
+/* ------- ARTÍCULO ------- */
+.content article {
+  border-bottom: 1px dotted #ccc;
+  margin-bottom: 25px;
+  padding: 5%;
+}
+
+.article-info-lat ul {
+  margin: 0px;
+  list-style: outside none none;
+  padding: 0;
+  position: absolute;
+}
+
+.article-head {
+  padding-left: 6em;
+  height: 70px;
+  display: table-cell;
+  vertical-align: middle;
+  font-weight: lighter;
+}
+
+.article-head h2 {
+  font-weight: lighter;
+  font-size: 1.9em;
+  margin: 0;
+}
+
+
+.article-content, .article-tags {
+  line-height: 1.8em;
+}
+
+  /* -- FECHA ARTÍCULO ------- */
+  .date-globo {
+    background-color: #777;
+    border-radius:100%;
+    width: 70px;
+    height: 70px;
+  }
+
+  .date-content {
+    text-align:center;
+    line-height: 1.5em;
+    padding-top: 0.2em;
+    color: white;
+    text-shadow: 1px 1px 1px black;
+  }
+
+  .date-month, .date-year {
+    font-size: 0.9em;
+  }
+
+  .date-day {
+    font-size: 2.6em;
+  }
+
+  /* ------------------------- */
+/* --------------------------- */
+
+@media(min-width:767px) {
+  .banner-head {
+    font-size: 3em;
+  }
+}
+
+@media(min-width:1300px) {
+  #main {
+    width: 80%;
+    margin: auto;
+  }
+}
